@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe 'Posts', type: :request do
+RSpec.describe 'Users', type: :request do
   describe 'GET #index' do
     before(:each) do
-      get user_posts_path(745)
+      get users_path
     end
 
     it 'should have the correct response status' do
@@ -15,15 +15,13 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'has the correct placeholder text' do
-      # rubocop:todo Layout/LineLength
-      expect(response.body).to include("Here you will find a users' posts in summary form with the comments showing under.")
-      # rubocop:enable Layout/LineLength
+      expect(response.body).to include('Here you will find a list of all the users')
     end
   end
 
   describe 'GET #show' do
     before(:each) do
-      get user_post_path(745, 3)
+      get user_path(745)
     end
 
     it 'should have the correct response status' do
@@ -36,7 +34,7 @@ RSpec.describe 'Posts', type: :request do
 
     it 'displays the correct placeholder text' do
       # rubocop:todo Layout/LineLength
-      expect(response.body).to include("Here you will find a users' specific post. The full post will be rendered with the full comment section under.")
+      expect(response.body).to include('Here you will find a specific user. The page will display user name, number of posts, bio and a summary of the posts')
       # rubocop:enable Layout/LineLength
     end
   end
