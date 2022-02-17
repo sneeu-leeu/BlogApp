@@ -37,6 +37,18 @@ To get a local copy up and running:
     cd Blog-SPA
     ```
 
+* Set up DataBase
+
+    ```bash
+    rails db:setup
+    ```
+    
+* Run RSpec tests
+
+    ```bash
+    rspec
+    ```
+
 ## Author
 
 👤 **Stephan Annandale**
