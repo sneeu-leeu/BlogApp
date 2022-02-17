@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_17_104008) do
+ActiveRecord::Schema.define(version: 2022_02_17_110140) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2022_02_17_104008) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "photo"
+    t.string "photo", default: "https://www.google.com/search?q=trojan+horse&sxsrf=AOaemvIgPS9hACIDmzNuscea74xUZ2Y_Tg:1639212511562&source=lnms&tbm=isch&sa=X&sqi=2&ved=2ahUKEwjxu9m7rtv0AhUPr5UCHW4MDl4Q_AUoAXoECAIQAw&biw=1366&bih=663&dpr=1#imgrc=G3m5aFlhdiGMUM"
     t.text "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
