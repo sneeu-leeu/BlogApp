@@ -6,6 +6,4 @@ class User < ApplicationRecord
   def return_post(limit = 3)
     post.order(created_at: :desc).limit(limit)
   end
-
-  
 end
