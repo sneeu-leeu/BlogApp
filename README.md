@@ -17,6 +17,25 @@
 - Create a Request spec file for controllers.
 - Test each action performed.
 
+
+### Milestone 3:
+- Build project schema.
+- Create and run migration files.
+- Add table and column names based on ERD diagram.
+
+### Milestone 4:
+
+- Create model classes based on ERD diagram and set up associations.
+- Your models should include:
+- A method that updates the posts counter for a user.
+- A method that returns the 5 most recent comments for a given post.
+- A method that updates the comments counter for a post.
+- A method that updates the likes counter for a post.
+- A method that returns the 3 most recent posts for a given user.
+- Make current user data available to all controllers.
+- Create a method called current_user in your ApplicationController.
+- A current_user method should return the first user from a database.
+
 ## Built With
 - Ruby
 - Ruby on rails
