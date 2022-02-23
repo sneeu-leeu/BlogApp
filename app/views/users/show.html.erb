@@ -12,12 +12,14 @@
     <span>Bio</span>
     <p><%= @user.bio %></p>
   </div>
-  <% @user.posts.each do |post| %>
+  <% @user.load_recent_three_posts.each do |post| %>
     <div class="post-overview black-border">
       <h3><%= link_to post.title, user_posts_path(post) %></h3>
       <p><%= post.text %></p>
       <span>Comments: <%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %></span>
     </div>
   <% end %>
+  <div class="button-wrapper black-border">
+    <%= link_to "See all post", user_posts_path(@user.id), class: "link-style"%>
+  </div>
 </div>
-
