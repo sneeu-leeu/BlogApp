@@ -1,2 +1,23 @@
-<h1>Here you will find a specific user. The page will display user name, number of posts, bio and a summary of the posts</h1>
+<div class="user-details">
+  <div class="user-container">
+    <div class="user-img black-border">
+      <%= image_tag("icon.png") %>
+    </div>
+    <div class="user-overview black-border">
+      <h2><%= @user.name %></h2>
+      <span>Number of posts: <%= @user.posts_counter || 0 %></span>
+    </div>
+  </div>
+  <div class="user-bio black-border">
+    <span>Bio</span>
+    <p><%= @user.bio %></p>
+  </div>
+  <% @user.posts.each do |post| %>
+    <div class="post-overview black-border">
+      <h3><%= post.title %></h3>
+      <p><%= post.text %></p>
+      <span>Comments: <%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %></span>
+    </div>
+  <% end %>
+</div>
 
