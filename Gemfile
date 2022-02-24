@@ -34,6 +34,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'database_cleaner'
   gem 'factory_girl_rails'
+  gem 'faker'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
 end
