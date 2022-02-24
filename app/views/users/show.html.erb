@@ -14,7 +14,7 @@
   </div>
   <% @user.load_recent_three_posts.each do |post| %>
     <div class="post-overview black-border">
-      <h3><%= link_to post.title, user_posts_path(post) %></h3>
+      <h3><%= link_to post.title, author_posts_path(post) %></h3>
       <p><%= post.text %></p>
       <span>Comments: <%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %></span>
     </div>

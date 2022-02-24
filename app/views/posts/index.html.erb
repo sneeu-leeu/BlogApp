@@ -8,10 +8,15 @@
       <span>Number of posts: <%= @author.posts_counter || 0 %></span>
     </div>
   </div>
+
+  <div class="button-wrapper create-post-link-container">
+        <%= link_to "Create new post", new_user_post_path, {:class => "black-border link-style"} %>
+  </div>
+
   <% @author.posts.each do |post| %>
     <div class="posts-comments-overview">
       <div class="post-overview black-border">
-        <h3><%= link_to post.title, user_posts_path(post)  %></h3>
+        <h3><%= link_to post.title, user_posts_path(post), {:class => "link-style"} %></h3>
         <p><%= post.text %></p>
         <span>Comments: <%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %></span>
       </div>

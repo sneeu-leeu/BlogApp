@@ -1,12 +1,11 @@
 <div class="create-post-container">
   <h1 class="post-create-header"> Create a new Post </h1>
-  <%= form_with model: @post, url: user_posts_path, scope: post, html: {class: "form-container"} do |form| %>
+  <%= form_with model: @post, url: user_posts_path, scope: @post, html: {class: "post-form-container"} do |form| %>
     <div class="post-title-container">
-      <%= form.label :title, "Title", class: "label"%>
-      <%= form.textfield :title, placeholder: "Title", required: true %>
+      <%= form.text_field :title, placeholder: "Title,  ex. The reason rails is awesome...", required: true %>
     </div>
     <div class="post-text-container">
-      <%= form.textarea :text, placeholder: "I hope you can spell...", rows: 10, required: true %>
+      <%= form.text_area :text, placeholder: "I hope you can spell...", rows: 10, required: true %>
     </div>
     <%= form.submit "Post", class: "submit-btn" %>
     <% end %>
