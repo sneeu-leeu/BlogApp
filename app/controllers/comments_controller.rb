@@ -7,4 +7,3 @@ class CommentsController < ApplicationController
     redirect_to "/users/#{post.user_id}/posts/#{@post.id}"
   end
 end
-
