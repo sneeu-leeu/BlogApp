@@ -11,6 +11,11 @@
     <%= form_with url: "#{post.id}/likes", html: {class: "add-like-container"} do |form|%>
         <%form.submit "Like", class: "submit-btm"%>
     <%end%>
+
+    <% flash.each d0 |name, msg| -%>
+        <%= content_tag :div, msg, class:"name"%>
+    <% end -%>
+    
     <div class="comments-container black-border">
         <% @post.comments.each do |comment| %>
             <p><%= comment.author.name %>: <%= comment.text %></p>
