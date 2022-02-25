@@ -13,10 +13,6 @@ RSpec.describe 'Users', type: :request do
     it 'displays the correct template' do
       expect(response).to render_template(:index)
     end
-
-    it 'has the correct placeholder text' do
-      expect(response.body).to include('Here you will find a list of all the users')
-    end
   end
 
   describe 'GET #show' do
@@ -30,12 +26,6 @@ RSpec.describe 'Users', type: :request do
 
     it 'displays the correct template' do
       expect(response).to render_template(:show)
-    end
-
-    it 'displays the correct placeholder text' do
-      # rubocop:todo Layout/LineLength
-      expect(response.body).to include('Here you will find a specific user. The page will display user name, number of posts, bio and a summary of the posts')
-      # rubocop:enable Layout/LineLength
     end
   end
 end
