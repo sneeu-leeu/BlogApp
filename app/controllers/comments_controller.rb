@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     new_comment.post_id = @post.post_id
     if new_comment.save
       redirect_to "/users/#{post.user_id}/posts/#{@post.id}", notice: 'Comment Posted!'
-    else 
+    else
       redirect_to "/users/#{post.user_id}/posts/#{@post.id}", alert: 'Something went wrong! Please try again'
     end
   end
