@@ -17,22 +17,17 @@
 - Create a Request spec file for controllers.
 - Test each action performed.
 
-
 ### Milestone 3:
+
 - Build project schema.
 - Create and run migration files.
 - Add table and column names based on ERD diagram.
 
 ### Milestone 4:
 
-- Create model classes based on ERD diagram and set up associations.
-- Make current user data available to all controllers.
-
-## Milestone 5:
-
-- Use preprocessed HTML file with embedded Ruby code.
-- Use layouts and templates for shared content
-- Implement the design from the sneak peek wireframes.
+- Create model classes for entities in the ERD.
+- Set up association between models.
+- Make currenty data available to all controllers.
 
 ## Built With
 - Ruby
