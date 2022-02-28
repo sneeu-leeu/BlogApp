@@ -6,7 +6,6 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.text :bio
       t.integer :posts_counter, :default => 0
       t.timestamps
-      t.integer :posts_counter, :default => 0
     end
   end
 end
