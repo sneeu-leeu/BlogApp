@@ -13,3 +13,211 @@
  *= require_tree .
  *= require_self
  */
+
+.black-border {
+  border: black 1px solid;
+}
+
+.users-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.posts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.posts-comments-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  width: 100%;
+}
+
+.post-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.user-container {
+  display: flex;
+  gap: 10px;
+  width: 60%;
+}
+
+.user-container .user-img {
+  width: 20%;
+}
+
+.user-container .user-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.link-style {
+  text-decoration: none;
+  color: black;
+}
+
+.user-container .user-overview {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.user-container .user-overview h2 {
+  margin-left: 20px;
+  font-size: 30px;
+}
+
+.post-overview span {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+}
+
+.user-container .user-overview span {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.user-bio {
+  width: calc(60% - 20px);
+  padding: 10px;
+}
+
+.user-bio p {
+  margin-top: 30px;
+}
+
+.post-overview {
+  width: calc(60% - 20px);
+  padding: 10px;
+  position: relative;
+}
+
+.button-wrapper {
+  margin: 10px 0 20px;
+}
+
+.button-wrapper a,
+.button-wrapper button {
+  width: 200px;
+  font-size: 17px;
+  height: 50px;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+.comments-container {
+  width: calc(60% - 20px);
+  padding: 10px;
+}
+
+.post-details {
+  width: calc(60% - 20px);
+  padding: 10px;
+}
+
+.post-details .post-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-details .post-header h2 {
+  margin-top: 0;
+}
+
+.post-create-header {
+  margin-left: 38%;
+}
+
+.post-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-title-container {
+  width: 50%;
+  margin: 10px;
+}
+
+.post-title-container input {
+  width: 98%;
+  height: 30px;
+  padding: 5px;
+}
+
+.post-text-container {
+  width: 50%;
+  margin: 10px;
+}
+
+.post-text-container textarea {
+  width: 99%;
+}
+
+.post-form-container input[type="submit"] {
+  width: 50%;
+  height: 50px;
+  font-size: 20px;
+}
+
+.create-post-link-container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-post-link-container a {
+  font-size: 17px;
+  text-decoration: none;
+  padding: 10px 20px;
+  text-align: center;
+  height: 24px;
+}
+
+.add-like-container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.add-like-container input,
+.add-comment-container input {
+  font-size: 17px;
+  text-align: center;
+  height: 24px;
+}
+
+.add-comment-container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.add-comment-container textarea {
+  width: 99%;
+}
