@@ -37,6 +37,28 @@
   align-items: center;
 }
 
+.posts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.posts-comments-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  width: 100%;
+}
+
+.post-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
 .user-container {
   display: flex;
   gap: 10px;
@@ -89,4 +111,36 @@
   width: calc(60% - 20px);
   padding: 10px;
   position: relative;
+}
+
+button-wrapper {
+  margin: 10px 0 20px;
+}
+
+.button-wrapper a,
+.button-wrapper button {
+  width: 200px;
+  font-size: 17px;
+  height: 50px;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+.comments-container {
+  width: calc(60% - 20px);
+  padding: 10px;
+}
+
+.post-details {
+  width: calc(60% - 20px);
+  padding: 10px;
+}
+
+.post-details .post-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-details .post-header h2 {
+  margin-top: 0;
 }
