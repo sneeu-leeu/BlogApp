@@ -10,34 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_17_104008) do
+ActiveRecord::Schema.define(version: 2022_02_23_120458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.bigint "author_id", null: false
-    t.bigint "post_id", null: false
-    t.string "text"
+    t.text "text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "author_id"
+    t.bigint "post_id", null: false
     t.index ["author_id"], name: "index_comments_on_author_id"
     t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
   create_table "likes", force: :cascade do |t|
-    t.bigint "author_id", null: false
-    t.bigint "post_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "author_id"
+    t.bigint "post_id", null: false
     t.index ["author_id"], name: "index_likes_on_author_id"
     t.index ["post_id"], name: "index_likes_on_post_id"
   end
 
   create_table "posts", force: :cascade do |t|
-    t.bigint "author_id", null: false
     t.string "title"
     t.text "text"
+    t.integer "comments_counter", default: 0
+    t.integer "likes_counter", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "comments_counter", default: 0
@@ -49,9 +50,9 @@ ActiveRecord::Schema.define(version: 2022_02_17_104008) do
     t.string "name"
     t.string "photo", default: "https://www.google.com/search?q=trojan+horse&sxsrf=AOaemvIgPS9hACIDmzNuscea74xUZ2Y_Tg:1639212511562&source=lnms&tbm=isch&sa=X&sqi=2&ved=2ahUKEwjxu9m7rtv0AhUPr5UCHW4MDl4Q_AUoAXoECAIQAw&biw=1366&bih=663&dpr=1#imgrc=G3m5aFlhdiGMUM"
     t.text "bio"
+    t.integer "posts_counter", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "posts_counter", default: 0
   end
 
   add_foreign_key "comments", "posts"
