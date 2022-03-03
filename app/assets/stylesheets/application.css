@@ -145,6 +145,10 @@
   margin-top: 0;
 }
 
+.post-create-header {
+  margin-left: 38%;
+}
+
 .post-form-container {
   display: flex;
   flex-direction: column;
@@ -164,7 +168,7 @@
 }
 
 .post-title-container input {
-  width: 90%;
+  width: 98%;
   height: 30px;
   padding: 5px;
 }

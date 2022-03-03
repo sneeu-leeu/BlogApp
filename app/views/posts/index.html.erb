@@ -1,3 +1,4 @@
+
 <h1>Here you will find a users' posts in summary form with the comments showing under.</h1>
 
 <div class="posts-container">
@@ -15,6 +16,9 @@
     <%= link_to "Create new post", new_user_post_path, {:class => "black-border link-style"} %>
   </div>
 
+  <% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+  <% end -%>
 
   <% @author.posts.each do |post| %>
     <div class="posts-comments-overview">
@@ -38,3 +42,5 @@
     </button>
   </div>
 </div>
+
+

@@ -1,3 +1,4 @@
+
 <h1>Here you will find a users' specific post. The full post will be rendered with the full comment section under.</h1>
 
 <div class="post-container">
@@ -14,6 +15,10 @@
   <%= form_with url: "#{@post.id}/likes", html: {class: "add-like-container"} do |form| %>
     <%= form.submit "Like", class: "submit-btn" %>
   <% end %>
+
+  <% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+  <% end -%>
 
   <div class="comments-container black-border">
     <% @post.comments.each do |comment| %>
