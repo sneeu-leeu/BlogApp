@@ -10,6 +10,7 @@ class LikesController < ApplicationController
         redirect_to "/users/#{@post.author_id}/posts/#{@post.id}", notice: 'Likeds Successfully'
       else
         redirect_to "/users/#{@post.author_id}/posts/#{@post.id}", alert: 'Sorry, Something Went Wrong'
+      end
     end
   end
 end
