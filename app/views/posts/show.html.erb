@@ -15,6 +15,10 @@
     <%= form.submit "Like", class: "submit-btn" %>
   <% end %>
 
+  <% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+  <% end -%>
+
   <div class="comments-container black-border">
     <% @post.comments.each do |comment| %>
       <p><%= comment.author.name %>: <%= comment.text %></p>
