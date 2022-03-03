@@ -1,6 +1,6 @@
 <div class="create-post-container">
     <h1 class ="post-create-header">Create a post</h1>
-    <%= form_with model: @post, url: user_posts_path, scope: :post, html: {class: "form-container"} do |form| %>
+    <%= form_with model: @post, url: user_posts_path, scope: :post, html: {class: "post-form-container"} do |form| %>
         <div class="post-title-container">
             <%= form.label :title, "Title", class: "label" %>
             <%= form.text_field :title, placeholder: "Title", required: true %>
