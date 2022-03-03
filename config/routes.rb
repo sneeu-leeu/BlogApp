@@ -1,7 +1,4 @@
-Rails.application.routes.draw dos
-  get 'comments/create'
-  get 'likes/create'
-
+Rails.application.routes.draw do
   root 'users#index'
 
   resources :users, only: %i[index show] do
