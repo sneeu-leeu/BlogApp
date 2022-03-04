@@ -1,7 +1,10 @@
-<div class="user-details">
-  <div class="user-container">
+
+<h1>Here you will find a specific user. The page will display user name, number of posts, bio and a summary of the posts</h1>
+
+<div class='user-details'>
+  <div class='user-container'>
     <div class="user-img black-border">
-      <%= image_tag("icon.png") %>
+      <%= image_tag("") %>
     </div>
     <div class="user-overview black-border">
       <h2><%= @user.name %></h2>
@@ -14,11 +17,11 @@
   </div>
   <% @user.load_recent_three_posts.each do |post| %>
     <div class="post-overview black-border">
-      <h3><%= link_to post.title, author_posts_path(post) %></h3>
+      <h3><%= link_to post.title, user_post_path(@user.id, post.id), class: 'link-style' %></h3>
       <p><%= post.text %></p>
       <span>Comments: <%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %></span>
     </div>
-  <% end %>
+  <%end%>
   <div class="button-wrapper black-border">
     <%= link_to "See all post", user_posts_path(@user.id), class: "link-style"%>
   </div>

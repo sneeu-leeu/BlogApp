@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe 'Posts', type: :request do
   describe 'GET #index' do
     before(:each) do
-      get user_posts_path(745)
+      get user_posts_path(1)
     end
 
-    it 'should have the correct response status' do
-      expect(response).to have_http_status(:ok)
+    it 'should return http 200 success' do
+      expect(response).to have_http_status(200)
     end
 
     it 'displays the correct template' do
@@ -23,7 +23,7 @@ RSpec.describe 'Posts', type: :request do
 
   describe 'GET #show' do
     before(:each) do
-      get user_post_path(745, 3)
+      get user_post_path(1, 3)
     end
 
     it 'should have the correct response status' do

@@ -1,7 +1,10 @@
+
+<h1>Here you will find a users' posts in summary form with the comments showing under.</h1>
+
 <div class="posts-container">
   <div class="user-container">
     <div class="user-img black-border">
-      <%= image_tag("icon.png") %>
+      <%= image_tag("") %>
     </div>
     <div class="user-overview black-border">
       <h2><%= @author.name %></h2>
@@ -10,13 +13,17 @@
   </div>
 
   <div class="button-wrapper create-post-link-container">
-        <%= link_to "Create new post", new_user_post_path, {:class => "black-border link-style"} %>
+    <%= link_to "Create new post", new_user_post_path, {:class => "black-border link-style"} %>
   </div>
+
+  <% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+  <% end -%>
 
   <% @author.posts.each do |post| %>
     <div class="posts-comments-overview">
       <div class="post-overview black-border">
-        <h3><%= link_to post.title, user_posts_path(post), {:class => "link-style"} %></h3>
+        <h3><%= link_to post.title, user_posts_path(post), class: "link-style"  %></h3>
         <p><%= post.text %></p>
         <span>Comments: <%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %></span>
       </div>
@@ -35,3 +42,5 @@
     </button>
   </div>
 </div>
+
+

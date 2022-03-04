@@ -12,3 +12,17 @@
   <% end %>
 </div> 
 
+<div class='users-container'>
+  <% @users.each do |user| %>
+    <div class='user-container'>
+      <div class="user-img black-border">
+        <%= image_tag("") %>
+      </div>
+      <div class="user-overview black-border">
+        <h2><%= link_to user.name, user_path(user), class: 'link-style' %></h2>
+        <span>Number of posts: <%= user.posts_counter || 0 %></span>
+      </div>
+    </div>
+  <% end %>
+</div>
+

@@ -1,23 +1,33 @@
+
+<h1>Here you will find a users' specific post. The full post will be rendered with the full comment section under.</h1>
+
 <div class="post-container">
-    <div class="post-details black-border">
-        <div class="post-header">
-            <h2><%= @post.title %> by <%= @author.name %></h2>
-            <span>Comments: <%= @post.comments_counter || 0 %>, Likes: <%= @post.likes_counter || 0 %></span>
-        </div>
-        <div class="post-content">
-            <%= @post.text %>
-        </div>
+  <div class="post-details black-border">
+    <div class="post-header">
+      <h2><%= @post.title %> by <%= @author.name %></h2>
+      <span>Comments: <%= @post.comments_counter || 0 %>, Likes: <%= @post.likes_counter || 0 %></span>
     </div>
-    <%= form_with url: "#{post.id}/likes", html: {class: "add-like-container"} do |form|%>
-        <%form.submit "Like", class: "submit-btm"%>
-    <%end%>
-    <div class="comments-container black-border">
-        <% @post.comments.each do |comment| %>
-            <p><%= comment.author.name %>: <%= comment.text %></p>
-        <% end %>
+    <div class="post-content">
+      <%= @post.text %>
     </div>
-    <%= form_with url: "#{post.id}/comments", scope: :comment, html: {class: "add-comment-container}" do |form|%>
-        <%= form.text_area :text, placeholder: "Comment on this post...", rows: 10, required: true %>
-        <%= form.submit "Comment", class: "submit-btn"%>
-    <%end%>
+  </div>
+
+  <%= form_with url: "#{@post.id}/likes", html: {class: "add-like-container"} do |form| %>
+    <%= form.submit "Like", class: "submit-btn" %>
+  <% end %>
+
+  <% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+  <% end -%>
+
+  <div class="comments-container black-border">
+    <% @post.comments.each do |comment| %>
+      <p><%= comment.author.name %>: <%= comment.text %></p>
+    <% end %>
+  </div>
+
+  <%= form_with url: "#{@post.id}/comments", scope: :comment, html: {class: "add-comment-container"} do |form| %>
+    <%= form.text_area :text, placeholder: "Type something here...", rows: 14, required: true %>
+    <%= form.submit "Comment", class: "submit-btn" %>
+  <% end %>
 </div> 

@@ -6,8 +6,8 @@ RSpec.describe 'Users', type: :request do
       get users_path
     end
 
-    it 'should have the correct response status' do
-      expect(response).to have_http_status(:ok)
+    it 'should returns http 200 success' do
+      expect(response).to have_http_status(200)
     end
 
     it 'displays the correct template' do
@@ -21,7 +21,7 @@ RSpec.describe 'Users', type: :request do
 
   describe 'GET #show' do
     before(:each) do
-      get user_path(745)
+      get user_path(1)
     end
 
     it 'should have the correct response status' do
