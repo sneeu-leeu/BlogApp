@@ -14,6 +14,8 @@
  *= require_self
  */
 
+@import "bootstrap";
+
 .black-border {
   border: 1px solid black;
 }
