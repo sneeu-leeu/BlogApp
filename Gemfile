@@ -2,9 +2,15 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.2'
+
 gem 'bootstrap', '~> 4.2.1'
+
 gem 'devise'
+
 gem 'rubocop', '>= 1.0', '< 2.0'
+
+gem 'cancancan', '~> 1.9'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.4'
