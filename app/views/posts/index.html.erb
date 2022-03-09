@@ -25,6 +25,9 @@
       <div class="post-overview black-border">
         <h3><%= link_to post.title, user_posts_path(post), class: "link-style"  %></h3>
         <p><%= post.text %></p>
+        <div class='delete-post-btn'>
+          <%= %>
+        </div>
         <span>Comments: <%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %></span>
       </div>
       <% if post.load_recent_five_comments.length > 0 %>
