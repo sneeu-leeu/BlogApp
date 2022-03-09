@@ -10,6 +10,9 @@
     <div class="post-content">
       <%= @post.text %>
     </div>
+    <% if can? :destroy, comment %>
+      <%= button_to "Delete Comment", "/posts/:post_id/comments/#{params[:id]}", method: :delete, params: { comment_id: comment.id }, class: 'del' %>
+    <% end %>
   </div>
 
   <%= form_with url: "#{@post.id}/likes", html: {class: "add-like-container"} do |form| %>
