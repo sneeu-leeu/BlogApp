@@ -23,5 +23,15 @@ RSpec.feature 'Logins', type: :feature do
       click_button 'Log in'
       expect(page).to have_content 'Invalid Email or password.'
     end
+
+    scenario 'Signup with correct data' do
+      @user = User.create(name: 'Max', email: 'maxverstappen@redbull.com', password: 'worldchamp33')
+      within 'form' do
+        fill_in 'Email', with: 'maxverstappen@redbull.com'
+        fill_in 'Password', with: 'worldchamp33'
+      end
+      click_button 'Log in'
+      expect(page).to have_current_path(user_session_path)
+    end
   end
 end
